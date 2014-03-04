@@ -1,4 +1,4 @@
-.PHONY: clean new
+.PHONY: clean new rebase
 
 build: venv
 	. venv/bin/activate; pelican -vs blog-conf.py\
@@ -9,8 +9,11 @@ preview: venv
 	  -o blog-htdocs/ blog-src/
 	python -m webbrowser blog-htdocs/index.html
 
-deploy: build
+deploy: rebase build
 	rsync -r --delete blog-htdocs/ cccgoe.de:/data/ccc/htdocs/blog/
+
+rebase:
+	git rebase
 
 clean:
 	rm -rfv blog-htdocs/
