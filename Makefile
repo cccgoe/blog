@@ -10,7 +10,7 @@ preview: venv
 	python -m webbrowser blog-htdocs/index.html
 
 deploy: build
-	rsync -r blog-htdocs/ cccgoe.de:/data/ccc/htdocs/blog/
+	rsync -r --delete blog-htdocs/ cccgoe.de:/data/ccc/htdocs/blog/
 
 clean:
 	rm -rfv blog-htdocs/
