@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import os
+
 AUTHOR = u'Marcel Hellkamp'
 SITENAME = u"cccgoe.de"
 SITESUBTITLE = u"Chaos Computer Club Göttingen"
@@ -11,13 +13,9 @@ GITHUB_URL = 'http://github.com/cccgoe/cccgoe-blog'
 MENUITEMS = (('Wiki','/wiki'),)
 
 LINKS = (
-  ('python.org','http://python.org/'),
-  ('Deutsches Python Forum','http://python-forum.de/'),
-  ('Python Wiki','http://wiki.python.de'),
-  ('Python Stammtisch Hannover','http://www.python-hannover.de'),
+  ('cccgoe.de','http://cccgoe.de/'),
 )
       
-
 #SOCIAL = (('twitter', 'http://twitter.com/bottlepy'),
 #          ('github', 'http://github.com/defnull'),)
 
@@ -28,3 +26,6 @@ LINKS = (
 STATIC_PATHS = ["static"]
 
 DELETE_OUTPUT_DIRECTORY = True
+
+if 'PREVIEW' in os.environ:
+  RELATIVE_URLS=True

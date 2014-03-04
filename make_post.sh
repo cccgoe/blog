@@ -20,6 +20,7 @@ fi
 
 slug="$(echo -n "${title}" \
       | sed -e 's/[^[:alnum:]]/-/g' \
+      | sed -e 's/\([\ä\ö\ü\Ä\Ü\Ö]\)/\1e/g;y/\ä\ö\ü\Ä\Ö\Ü/aouAOU/' \
       | tr -s '-')"
 src=blog-src/$slug.rst
 
@@ -35,7 +36,6 @@ echo "$title
 :date: $date $time
 :author: $name <$email>
 :slug: $slug
-:lang: en
 :category: misc
 :tags: unsorted
 :summary: Short version for index and feeds (optional)

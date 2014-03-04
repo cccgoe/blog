@@ -1,14 +1,16 @@
 .PHONY: clean new
 
 build: venv
-	. venv/bin/activate; pelican -vs blog-conf.py -o blog-htdocs/ blog-src/
+	. venv/bin/activate; pelican -vs blog-conf.py\
+	  -o blog-htdocs/ blog-src/
 
-preview: build
+preview: venv
+	. venv/bin/activate; PREVIEW=yes pelican -vs blog-conf.py\
+	  -o blog-htdocs/ blog-src/
 	python -m webbrowser blog-htdocs/index.html
 
 deploy: build
 	rsync -r blog-htdocs/ cccgoe.de:/data/ccc/htdocs/blog/
-
 
 clean:
 	rm -rfv blog-htdocs/
