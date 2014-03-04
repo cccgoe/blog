@@ -18,29 +18,33 @@ Artikel Schreiben
 
 .. code-highlight: sh
 
-Abhängigkeiten installieren::
+**1) Abhängigkeiten installieren**::
 
     apt-get install make git python python-virtualenv
     pacman -Sy make git python2 python2-virtualenv
 
-Reporotory clonen::
+**2) Repository auschecken:**
 
-    git clone https://github.com/cccgoe/blog.git
+Zuerst brauchst du einen Fork des https://github.com/cccgoe/blog repositories. Alternativ kannst du auch Pusch-Rechte erfragen und direkt mit dem `cccgoe/blog` Repositrory arbeiten::
+
+    git clone https://github.com/YOURNAME/blog.git
     cd blog
 
-Einen Atrikel schreiben::
+**3) Einen Atrikel schreiben**::
 
     make new
     # ... Es öffnet sich ein $EDITOR
 
-Vorschau generieren::
+**4) Vorschau generieren**::
 
     make preview
 
-Artikel abschicken::
+**5) Artikel abschicken**::
 
     git add blog-src/*.rst
     git commit -a && git push
+
+Wenn du keine Pusch-Rechte für das `cccgoe/blog` Repositiory hast und mit deinem Fork arbeitest, kannst du jetzt auf GitHub einen Pull-Request erstellen.
 
 Artikel mit Bildern oder Dateien
 --------------------------------

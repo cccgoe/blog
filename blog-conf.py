@@ -4,7 +4,7 @@ import os
 PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), 'blog-src/'))
 
 AUTHOR = u'Marcel Hellkamp'
-SITENAME = u"cccgoe.de"
+SITENAME = u"cccgoe/blog"
 SITESUBTITLE = u"Chaos Computer Club Göttingen"
 SITEURL = 'https://cccgoe.de/blog'
 TIMEZONE = "Europe/Berlin"
