@@ -9,7 +9,7 @@ TIMEZONE = "Europe/Berlin"
 FEED_RSS = 'feeds/all.rss.xml'
 CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
 
-GITHUB_URL = 'http://github.com/cccgoe/cccgoe-blog'
+GITHUB_URL = 'https://github.com/cccgoe/blog'
 MENUITEMS = (('Wiki','/wiki'),)
 
 LINKS = (
